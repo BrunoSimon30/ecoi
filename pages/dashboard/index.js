@@ -26,7 +26,7 @@ export default function FundDistributionPage() {
       <div className="fund-wrap space-y-6">
         <div className="fund-top flex gap-6">
           {/* Total Funds Card */}
-          <div className="border border-gray-200 py-4 px-6 rounded-2xl space-y-6">
+          <div className="w-full border border-gray-200 py-4 px-6 rounded-2xl space-y-6">
             <div className="flex gap-6">
               <div className="flex items-center gap-4">
                 <span className="w-12 h-12 rounded-full bg-[#D1E7D1] text-2xl flex items-center justify-center">
@@ -62,7 +62,7 @@ export default function FundDistributionPage() {
           </div>
 
           {/* Distribution Card */}
-          <div className="border border-gray-200 py-4 px-6 rounded-2xl space-y-6">
+          <div className="w-full border border-gray-200 py-4 px-6 rounded-2xl space-y-6">
             <div className="flex gap-6">
               <div className="flex items-center gap-4">
                 <span className="w-12 h-12 rounded-full bg-[#D1E7D1] text-2xl flex items-center justify-center">
@@ -82,7 +82,7 @@ export default function FundDistributionPage() {
           </div>
 
           {/* Add Distribution Card */}
-          <div className="border border-gray-200 py-4 px-6 rounded-2xl space-y-6">
+          <div className="w-full border border-gray-200 py-4 px-6 rounded-2xl space-y-6">
             <div className="text-center gap-4">
               <button onClick={openDistributefunds} className="w-12 h-12 rounded-full bg-[#D1E7D1] text-2xl flex items-center justify-center m-auto">
                 <FiPlus />

@@ -1,11 +1,11 @@
 import Dashboardlayout from "@/components/Layout/Dashboardlayout";
-import { HiOutlineUser } from "react-icons/hi2";
 import React, { useState } from "react";
 import Popup from "@/components/Popup";
-import UserTableLayout from "@/components/Table/UserTable";
+import InventoryTable from "@/components/Table/InventoryTable";
 
-export default function ManagerUsers() {
-  const [isDistributePopupOpen, setDistributePopupOpen] = useState(false);
+
+export default function InventoryManage() {
+ const [isDistributePopupOpen, setDistributePopupOpen] = useState(false);
   const [isDistributefundOpen, setDistributefundOpen] = useState(false);
   const [isApplyPopupOpen, setApplyPopupOpen] = useState(false);
   const [isSubmitfundOpen, setSubmitfundOpen] = useState(false);
@@ -20,11 +20,11 @@ export default function ManagerUsers() {
   const closeApplyPopup = () => setApplyPopupOpen(false);
 
   return (
-    <Dashboardlayout heading={'Managing Users'}>
+    <Dashboardlayout heading={'Inventory Managerment'}>
       <div className="users-wrap space-y-6">
          
 
-        <UserTableLayout />
+        <InventoryTable />
       </div>
 
       {/* Popups */}
