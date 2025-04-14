@@ -9,7 +9,7 @@ export default function Dashboardlayout({ children, heading }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <section className="dashboard-layout flex gap-2 main-bg h-screen overflow-hidden relative">
+    <section className="dashboard-layout flex gap-2 main-bg min-h-screen md:h-screen overflow-hidden relative">
       {/* Overlay with blur */}
       <div
         className={`fixed inset-0 z-40  backdrop-blur-sm transition-opacity md:hidden ${
@@ -33,7 +33,7 @@ export default function Dashboardlayout({ children, heading }) {
           <header className="px-5 border-b border-gray-200 py-6">
             <div className="flex items-center justify-between">
               <div className="w-full">
-                <h1 className="text-black text-3xl font-semibold">{heading}</h1>
+                <h1 className="text-black text-xl md:text-3xl font-semibold">{heading}</h1>
                 <p className="text-base text-gray-500">Lorem Ipsum Dolar</p>
               </div>
               <div className="w-full flex gap-4 items-center justify-end">
@@ -55,7 +55,8 @@ export default function Dashboardlayout({ children, heading }) {
                     <CiSearch />
                   </button>
                 </div>
-                <Link
+              <div className="flex items-center gap-4">
+              <Link
                   className="text-[#5B9425] bg-[#D1E7D1] text-3xl p-2 rounded hidden md:block"
                   href={""}
                 >
@@ -70,6 +71,7 @@ export default function Dashboardlayout({ children, heading }) {
                     alt="profile"
                   />
                 </div>
+              </div>
               </div>
             </div>
           </header>

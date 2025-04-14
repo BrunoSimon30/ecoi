@@ -12,7 +12,7 @@ const Popup = ({ isOpen, onClose, children, widthClass }) => {
   return (
     <div className="popup-overlay " onClick={onClose}>
       <div 
-        className={`popup-content ${widthClass}`} 
+        className={`popup-content ${widthClass} mx-2`} 
         onClick={handlePopupClick}  
       >
         

@@ -77,7 +77,28 @@ export default function SideBar({ closeSidebar }) {
             </span>
             <span className="mx-4 text-md font-medium">Inventory Management</span>
           </Link>
-          
+          <Link
+            className={`flex items-center px-3 py-3 transition-colors duration-300 transform rounded-lg ${isActive(
+              "/manager/inventory-management"
+            )} hover:bg-[#5dad12] hover:text-white`}
+            href={"/manager/inventory-management "}
+          >
+            <span className="text-2xl">
+              <LiaFileInvoiceDollarSolid />
+            </span>
+            <span className="mx-4 text-md font-medium">Inventory Management</span>
+          </Link>
+          <Link
+            className={`flex items-center px-3 py-3 transition-colors duration-300 transform rounded-lg ${isActive(
+              "/manager/purchase-history"
+            )} hover:bg-[#5dad12] hover:text-white`}
+            href={"/manager/purchase-history "}
+          >
+            <span className="text-2xl">
+              <LiaFileInvoiceDollarSolid />
+            </span>
+            <span className="mx-4 text-md font-medium">Purchase History</span>
+          </Link>
         </nav>
 
         <div className="mt-6">

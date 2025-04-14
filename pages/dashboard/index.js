@@ -24,8 +24,8 @@ export default function FundDistributionPage() {
   return (
     <Dashboardlayout  heading={'Fund Distribution'}>
       <div className="fund-wrap space-y-6">
-        <div className="fund-top flex gap-6">
-          {/* Total Funds Card */}
+        <div className="fund-top md:flex gap-6 space-y-4 md:space-y-0">
+           
           <div className="w-full border border-gray-200 py-4 px-6 rounded-2xl space-y-6">
             <div className="flex gap-6">
               <div className="flex items-center gap-4">
@@ -61,7 +61,7 @@ export default function FundDistributionPage() {
             </div>
           </div>
 
-          {/* Distribution Card */}
+         
           <div className="w-full border border-gray-200 py-4 px-6 rounded-2xl space-y-6">
             <div className="flex gap-6">
               <div className="flex items-center gap-4">
@@ -81,7 +81,7 @@ export default function FundDistributionPage() {
             </div>
           </div>
 
-          {/* Add Distribution Card */}
+         
           <div className="w-full border border-gray-200 py-4 px-6 rounded-2xl space-y-6">
             <div className="text-center gap-4">
               <button onClick={openDistributefunds} className="w-12 h-12 rounded-full bg-[#D1E7D1] text-2xl flex items-center justify-center m-auto">

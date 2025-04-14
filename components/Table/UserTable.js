@@ -13,7 +13,7 @@ export default function UserTableLayout() {
   const [dropdownVisible, setDropdownVisible] = useState({});
   const [isDistributePopupOpen, setDistributePopupOpen] = useState(false);
   const openDistributePopup = () => setDistributePopupOpen(true);
-  const itemsPerPage = 3;
+  const itemsPerPage = 8;
 
   const openApplyPopup = () => {
     setDistributePopupOpen(false);
@@ -191,45 +191,176 @@ export default function UserTableLayout() {
       usageColor: "bg-red-100 text-red-700", // Red for "Rejected"
       funds: "2/3",
     },
+    {
+      id: 4,
+      name: "Antony Rogers",
+      email: "antony@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      location: "New York",
+      userid: "12747",
+      type: "Monthly",
+      approval: "In Review",
+      usageColor: "bg-yellow-100 text-yellow-700", // Yellow for "In Review"
+      funds: "1/3",
+    },
+    {
+      id: 5,
+      name: "Linda Parkers",
+      email: "linda@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+      location: "New York",
+      userid: "25747",
+      type: "Yearly",
+      approval: "Onboarded",
+      usageColor: "bg-green-100 text-green-700", // Green for "Onboarded"
+      funds: "2/3",
+    },
+    {
+      id: 6,
+      name: "anda Parkers",
+      email: "licnda@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      location: "New York",
+      userid: "6",
+      type: "Yearly",
+      approval: "Rejected",
+      usageColor: "bg-red-100 text-red-700", // Red for "Rejected"
+      funds: "2/3",
+    },
+    {
+      id: 7,
+      name: "Antony Rogers",
+      email: "antony@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      location: "New York",
+      userid: "12747",
+      type: "Monthly",
+      approval: "In Review",
+      usageColor: "bg-yellow-100 text-yellow-700", // Yellow for "In Review"
+      funds: "1/3",
+    },
+    {
+      id: 8,
+      name: "Linda Parkers",
+      email: "linda@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+      location: "New York",
+      userid: "25747",
+      type: "Yearly",
+      approval: "Onboarded",
+      usageColor: "bg-green-100 text-green-700", // Green for "Onboarded"
+      funds: "2/3",
+    },
+    {
+      id: 9,
+      name: "anda Parkers",
+      email: "licnda@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      location: "New York",
+      userid: "6",
+      type: "Yearly",
+      approval: "Rejected",
+      usageColor: "bg-red-100 text-red-700", // Red for "Rejected"
+      funds: "2/3",
+    },
   ];
 
   const inactiveUsers = [
     {
+      id: 2,
+      name: "Linda Parkers",
+      email: "linda@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+      location: "New York",
+      userid: "25747",
+      type: "Yearly",
+      approval: "Onboarded",
+      usageColor: "bg-green-100 text-green-700", // Green for "Onboarded"
+      funds: "2/3",
+    },
+    {
       id: 3,
-      name: "John Hampton",
-      email: "john@gmail.com",
-      avatar: "https://randomuser.me/api/portraits/men/45.jpg",
-      amount: "$1640.26",
-      date: "9-4-2025",
-      usage: "40%",
-      usageColor: "bg-yellow-100 text-yellow-700",
-      funds: "3/3",
+      name: "anda Parkers",
+      email: "licnda@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      location: "New York",
+      userid: "6",
+      type: "Yearly",
+      approval: "Rejected",
+      usageColor: "bg-red-100 text-red-700", // Red for "Rejected"
+      funds: "2/3",
     },
     {
       id: 4,
-      name: "Mark Walter",
-      email: "mark@gmail.com",
-      avatar: "https://randomuser.me/api/portraits/men/46.jpg",
-      amount: "$2340.58",
-      date: "9-4-2025",
-      usage: "100%",
-      usageColor: "bg-yellow-100 text-yellow-700",
-      funds: "3/3",
+      name: "Antony Rogers",
+      email: "antony@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      location: "New York",
+      userid: "12747",
+      type: "Monthly",
+      approval: "In Review",
+      usageColor: "bg-yellow-100 text-yellow-700", // Yellow for "In Review"
+      funds: "1/3",
     },
     {
       id: 5,
-      name: "Larissa Burton",
-      email: "laris21@gmail.com",
-      avatar: "https://randomuser.me/api/portraits/women/45.jpg",
-      amount: "$2340.58",
-      date: "9-4-2025",
-      usage: "60%",
-      usageColor: "bg-yellow-100 text-yellow-700",
-      funds: (
-        <span className="px-3 py-1 text-sm rounded-full font-medium bg-green-100 text-green-600">
-          Completed
-        </span>
-      ),
+      name: "Linda Parkers",
+      email: "linda@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+      location: "New York",
+      userid: "25747",
+      type: "Yearly",
+      approval: "Onboarded",
+      usageColor: "bg-green-100 text-green-700", // Green for "Onboarded"
+      funds: "2/3",
+    },
+    {
+      id: 6,
+      name: "anda Parkers",
+      email: "licnda@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      location: "New York",
+      userid: "6",
+      type: "Yearly",
+      approval: "Rejected",
+      usageColor: "bg-red-100 text-red-700", // Red for "Rejected"
+      funds: "2/3",
+    },
+    {
+      id: 7,
+      name: "Antony Rogers",
+      email: "antony@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      location: "New York",
+      userid: "12747",
+      type: "Monthly",
+      approval: "In Review",
+      usageColor: "bg-yellow-100 text-yellow-700", // Yellow for "In Review"
+      funds: "1/3",
+    },
+    {
+      id: 8,
+      name: "Linda Parkers",
+      email: "linda@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+      location: "New York",
+      userid: "25747",
+      type: "Yearly",
+      approval: "Onboarded",
+      usageColor: "bg-green-100 text-green-700", // Green for "Onboarded"
+      funds: "2/3",
+    },
+    {
+      id: 9,
+      name: "anda Parkers",
+      email: "licnda@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      location: "New York",
+      userid: "6",
+      type: "Yearly",
+      approval: "Rejected",
+      usageColor: "bg-red-100 text-red-700", // Red for "Rejected"
+      funds: "2/3",
     },
   ];
 
@@ -249,7 +380,7 @@ export default function UserTableLayout() {
     <>
       <div className="fund-table border border-gray-200 py-6 px-6 rounded-2xl">
         {/* Tabs and Pagination (Top) */}
-        <div className="flex justify-between items-center mb-4">
+        <div className="md:flex justify-between items-center mb-4 space-y-6 md:space-y-0">
           <div className=" ">
             <h2 className="text-xl font-semibold text-gray-800 flex items-center gap-2">
               <span className="w-12 h-12 rounded-full bg-[#D1E7D1] text-2xl flex items-center justify-center">
@@ -258,7 +389,7 @@ export default function UserTableLayout() {
               Managing Users
             </h2>
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-4 ">
             <button
               onClick={() => setTab("active")}
               className={`px-4 py-2 rounded-full font-medium ${
@@ -280,16 +411,14 @@ export default function UserTableLayout() {
               Employee
             </button>
           </div>
-          <div>
+          <div className="flex gap-4">
             <button
               onClick={openDistributePopup}
               className="bg-[#5B9425] hover:bg-green-700 text-white font-medium px-5 py-2 rounded-full text-sm"
             >
               + Add User
             </button>
-          </div>
-          {/* Pagination */}
-          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2">
             <Link
               href="#"
               onClick={() => handlePageChange(currentPage - 1)}
@@ -331,9 +460,12 @@ export default function UserTableLayout() {
               <IoChevronForwardSharp />
             </Link>
           </div>
+          </div>
+          {/* Pagination */}
+         
         </div>
 
-        {/* Table */}
+        <div className="h-[600px] overflow-scroll md:overflow-x-hidden ">
         <DataTable
           columns={columns}
           data={paginatedData}
@@ -342,17 +474,20 @@ export default function UserTableLayout() {
           pointerOnHover
           responsive={true}
         />
+        </div>
+        
       </div>
       <Popup
         isOpen={isDistributePopupOpen}
         onClose={() => setDistributePopupOpen(false)}
-        widthClass="w-250"
+        widthClass="w-full md:w-250"
       >
         <div className="space-y-4 py-5">
           <div className="text-center">
             <h1 className="text-2xl font-semibold">Demographics Information</h1>
           </div>
-          <form className="space-y-8">
+        <div className="h-[500px] overflow-scroll md:h-full md:overflow-auto  ">
+        <form className="space-y-8 ">
             <div className="text-center">
               <div className="w-16 h-16 bg-gray-300 rounded-full text-center flex items-end justify-center overflow-hidden m-auto">
                 <Image
@@ -369,7 +504,7 @@ export default function UserTableLayout() {
                 </h4>
               </div>
             </div>
-            <div className="grid grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="form-group">
                 <label class="block text-gray-500 text-sm  mb-2">Name</label>
                 <input
@@ -523,6 +658,7 @@ export default function UserTableLayout() {
               </button>
             </div>
           </form>
+        </div>
         </div>
       </Popup>
     </>

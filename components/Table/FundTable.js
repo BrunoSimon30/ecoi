@@ -8,7 +8,7 @@ export default function FundTableLayout() {
   const [tab, setTab] = useState("active");
   const [currentPage, setCurrentPage] = useState(1);
   const [dropdownVisible, setDropdownVisible] = useState({});
-  const itemsPerPage = 2;
+  const itemsPerPage = 4;
 
   const customStyles = {
     table: {
@@ -174,9 +174,113 @@ export default function FundTableLayout() {
       usageColor: "bg-yellow-100 text-yellow-700",
       funds: "2/3",
     },
+    {
+      id: 1,
+      name: "Antony Rogers",
+      email: "antony@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      amount: "$2540.58",
+      date: "9-4-2025",
+      usage: "60%",
+      usageColor: "bg-yellow-100 text-yellow-700",
+      funds: "1/3",
+    },
+    {
+      id: 2,
+      name: "Linda Parkers",
+      email: "linda@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+      amount: "$1567.80",
+      date: "9-4-2025",
+      usage: "39%",
+      usageColor: "bg-yellow-100 text-yellow-700",
+      funds: "2/3",
+    },
+    {
+      id: 1,
+      name: "Antony Rogers",
+      email: "antony@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      amount: "$2540.58",
+      date: "9-4-2025",
+      usage: "60%",
+      usageColor: "bg-yellow-100 text-yellow-700",
+      funds: "1/3",
+    },
+    {
+      id: 2,
+      name: "Linda Parkers",
+      email: "linda@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+      amount: "$1567.80",
+      date: "9-4-2025",
+      usage: "39%",
+      usageColor: "bg-yellow-100 text-yellow-700",
+      funds: "2/3",
+    },
+    {
+      id: 1,
+      name: "Antony Rogers",
+      email: "antony@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      amount: "$2540.58",
+      date: "9-4-2025",
+      usage: "60%",
+      usageColor: "bg-yellow-100 text-yellow-700",
+      funds: "1/3",
+    },
+    {
+      id: 2,
+      name: "Linda Parkers",
+      email: "linda@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/women/32.jpg",
+      amount: "$1567.80",
+      date: "9-4-2025",
+      usage: "39%",
+      usageColor: "bg-yellow-100 text-yellow-700",
+      funds: "2/3",
+    },
+
   ];
 
   const inactiveUsers = [
+    {
+      id: 3,
+      name: "John Hampton",
+      email: "john@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+      amount: "$1640.26",
+      date: "9-4-2025",
+      usage: "40%",
+      usageColor: "bg-yellow-100 text-yellow-700",
+      funds: "3/3",
+    },
+    {
+      id: 4,
+      name: "Mark Walter",
+      email: "mark@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/men/46.jpg",
+      amount: "$2340.58",
+      date: "9-4-2025",
+      usage: "100%",
+      usageColor: "bg-yellow-100 text-yellow-700",
+      funds: "3/3",
+    },
+    {
+      id: 5,
+      name: "Larissa Burton",
+      email: "laris21@gmail.com",
+      avatar: "https://randomuser.me/api/portraits/women/45.jpg",
+      amount: "$2340.58",
+      date: "9-4-2025",
+      usage: "60%",
+      usageColor: "bg-yellow-100 text-yellow-700",
+      funds: (
+        <span className="px-3 py-1 text-sm rounded-full font-medium bg-green-100 text-green-600">
+          Completed
+        </span>
+      ),
+    },
     {
       id: 3,
       name: "John Hampton",
@@ -229,7 +333,7 @@ export default function FundTableLayout() {
   };
 
   return (
-    <div className="fund-table border border-gray-200 py-6 px-6 rounded-2xl">
+    <div className="fund-table border border-gray-200 py-4 px-6 rounded-2xl">
       {/* Tabs and Pagination (Top) */}
       <div className="flex justify-between items-center mb-4">
         <div className="flex gap-4">
@@ -257,20 +361,20 @@ export default function FundTableLayout() {
 
         {/* Pagination */}
         <div className="flex items-center gap-2">
-          <Link
-            href="#"
+          <button
+            
             onClick={() => handlePageChange(currentPage - 1)}
             className={`flex items-center text-[#5B9425] px-2 py-2 text-sm drop-shadow-sm rounded-xl bg-white ${
               currentPage === 1 ? "cursor-not-allowed opacity-50" : ""
             }`}
           >
             <IoChevronBackSharp />
-          </Link>
+          </button>
 
           <div className="items-center hidden lg:flex gap-x-3">
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <Link
-                href="#"
+              <button
+               
                 key={page}
                 onClick={() => handlePageChange(page)}
                 className={`px-3 py-1 text-sm rounded-md text-[#5B9425] ${
@@ -278,24 +382,25 @@ export default function FundTableLayout() {
                 }`}
               >
                 {page}
-              </Link>
+              </button>
             ))}
           </div>
 
-          <Link
-            href="#"
+          <button
+           
             onClick={() => handlePageChange(currentPage + 1)}
             className={`flex items-center text-[#5B9425] px-2 py-2 text-sm drop-shadow-sm rounded-xl bg-white ${
               currentPage === totalPages ? "cursor-not-allowed opacity-50" : ""
             }`}
           >
             <IoChevronForwardSharp />
-          </Link>
+          </button>
         </div>
       </div>
 
       {/* Table */}
-      <DataTable
+     <div className="h-[460px] overflow-scroll  md:overflow-x-hidden">
+     <DataTable
         columns={columns}
         data={paginatedData}
         customStyles={customStyles}
@@ -303,6 +408,8 @@ export default function FundTableLayout() {
         pointerOnHover
         responsive={true}
       />
+     </div>
+      
     </div>
   );
 }

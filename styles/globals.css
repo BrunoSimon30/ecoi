@@ -6,6 +6,9 @@ body {
  font-family: "Outfit", sans-serif;
 }
 /* button */
+button{
+  cursor: pointer;
+}
 .btn-a
 {
   border: 2px solid #5B9425;
@@ -55,6 +58,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99;
 }
 
 .popup-content {
@@ -75,3 +79,9 @@ body {
 }
 
 /*==== End Popup Css ====*/
+@media (max-width: 1200px)
+{
+  div#cell-4-1 {
+    width: 300px;
+  }
+}

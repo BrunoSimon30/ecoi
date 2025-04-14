@@ -62,7 +62,7 @@ export default function index() {
                       type="text"
                       maxLength="1"
                       placeholder="-"
-                      className="w-20 h-20 rounded-lg text-center text-xl bg-blue-100 focus:outline-none"
+                      className="w-20 h-20 rounded-lg text-center text-xl bg-gray-200 focus:outline-none"
                       value={digit}
                       onChange={(e) => handleChange(index, e.target.value)}
                       onKeyDown={(e) => handleKeyDown(index, e)}
