@@ -4,6 +4,7 @@
 body {
 
  font-family: "Outfit", sans-serif;
+ position: relative;
 }
 /* button */
 button{
@@ -23,12 +24,18 @@ button{
   width: 100%;
   text-align: center;
 }
+.btn-a:hover
+{
+  background-color: #5B9425;
+  color: #fff;
+}
+ 
 .btn-b
 {
   border: 2px solid #5B9425;
   padding:8px;
   border-radius: 30px;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: 500;
   color: #fff;
   cursor: pointer;

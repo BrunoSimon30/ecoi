@@ -16,7 +16,7 @@ const Popup = ({ isOpen, onClose, children, widthClass }) => {
         onClick={handlePopupClick}  
       >
         
-        <button onClick={onClose} className="absolute top-2 right-3   font-bold bg-gray-100 text-base p-2 rounded-full">
+        <button onClick={onClose} className="absolute z-20 top-2 right-3   font-bold bg-gray-100 text-base p-2 rounded-full">
          <IoMdClose/>
         </button>
         {children}

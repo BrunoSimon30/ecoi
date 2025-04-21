@@ -47,7 +47,7 @@ export default function InventoryManagement() {
     <>
       <Dashboardlayout heading={"Inventory Managerment"}>
         <div className="users-wrap space-y-6">
-          <div className="md:grid grid-cols-3 gap-6 space-y-4 md:space-y-0">
+          <div className="xl:grid grid-cols-3 gap-6 space-y-4 xl:space-y-0">
             <div className="col-span-2   border border-gray-200 py-6 px-6 rounded-2xl space-y-8">
               <div className="top-h">
                 <h2 className="text-xl font-semibold text-gray-800 flex items-center gap-2">

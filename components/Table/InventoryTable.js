@@ -467,7 +467,7 @@ export default function InventoryTable() {
             <span className="text-[#5B9425] text-3xl">
               <MdOutlineFileUpload />
             </span>
-            <p className="text-gray-700 mb-4">Drag and Drop File Here</p>
+            <p className="text-gray-500 mb-4">Drag and Drop File Here</p>
 
             <input
               type="file"

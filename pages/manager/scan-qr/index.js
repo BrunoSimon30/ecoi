@@ -6,6 +6,7 @@ import Image from "next/image";
 import { IoChevronBackSharp } from "react-icons/io5";
 import { TfiLineDashed } from "react-icons/tfi";
 import { BiScan } from "react-icons/bi";
+import BackBtn from "@/components/BackBtn";
 
 export default function ScanQrCode() {
   return (
@@ -13,14 +14,7 @@ export default function ScanQrCode() {
     <div className="container mx-auto max-w-screen-xl">
       <div className="m-wrap space-y-24">
         <div className="name-warp flex items-center  ">
-          <div className="back-btn">
-            <Link
-              href={"/"}
-              className="text-2xl bg-[#5b94251f] text-[#5B9425] inline-block rounded p-2"
-            >
-              <IoChevronBackSharp />
-            </Link>
-          </div>
+       <BackBtn/>
           <div className="w-full text-center">
           <h1 className="text-2xl font-semibold">Scan QR</h1>
           </div>

@@ -8,7 +8,11 @@ export default function FundTableLayout() {
   const [tab, setTab] = useState("active");
   const [currentPage, setCurrentPage] = useState(1);
   const [dropdownVisible, setDropdownVisible] = useState({});
+  const [weekSelections, setWeekSelections] = useState({});
   const itemsPerPage = 4;
+
+
+ 
 
   const customStyles = {
     table: {
@@ -85,6 +89,8 @@ export default function FundTableLayout() {
         </div>
       ),
     },
+
+    
     {
       name: "Amount",
       selector: (row) => row.amount,
@@ -97,6 +103,48 @@ export default function FundTableLayout() {
       name: "Date",
       selector: (row) => row.date,
       sortable: true,
+    },
+    {
+      name: "Weeks",
+      selector: (row) => row.id,
+      cell: (row) => {
+        const selectedWeeks = weekSelections[row.id] || [];
+    
+        const toggleWeek = (index) => {
+          setWeekSelections((prev) => {
+            const prevWeeks = prev[row.id] || [];
+            const isSelected = prevWeeks.includes(index);
+            const newWeeks = isSelected
+              ? prevWeeks.filter((w) => w !== index)
+              : [...prevWeeks, index];
+    
+            return {
+              ...prev,
+              [row.id]: newWeeks,
+            };
+          });
+        };
+    
+        return (
+          <div className="flex items-center gap-1">
+            {Array.from({ length: 4 }, (_, index) => {
+              const isSelected = selectedWeeks.includes(index);
+              return (
+                <div
+                  key={index}
+                  onClick={() => toggleWeek(index)}
+                  className={`w-6 h-6 rounded-full cursor-pointer transition-all duration-200 ${
+                    isSelected
+                      ? "bg-green-200 border border-green-200"
+                      : "border border-gray-300 bg-transparent"
+                  }`}
+                  title={`Week ${index + 1}`}
+                ></div>
+              );
+            })}
+          </div>
+        );
+      },
     },
     {
       name: "Usage",
@@ -114,7 +162,7 @@ export default function FundTableLayout() {
       selector: (row) => row.funds,
       cell: (row) =>
         typeof row.funds === "string" ? (
-          <div className="px-3 py-1 rounded-full border text-sm text-gray-700 border-gray-300 inline-block">
+          <div className="px-3 py-1 rounded-full border text-sm text-gray-500 border-gray-300 inline-block">
             {row.funds}
           </div>
         ) : (
@@ -175,7 +223,7 @@ export default function FundTableLayout() {
       funds: "2/3",
     },
     {
-      id: 1,
+      id: 3,
       name: "Antony Rogers",
       email: "antony@gmail.com",
       avatar: "https://randomuser.me/api/portraits/men/32.jpg",
@@ -186,7 +234,7 @@ export default function FundTableLayout() {
       funds: "1/3",
     },
     {
-      id: 2,
+      id: 4,
       name: "Linda Parkers",
       email: "linda@gmail.com",
       avatar: "https://randomuser.me/api/portraits/women/32.jpg",
@@ -197,7 +245,7 @@ export default function FundTableLayout() {
       funds: "2/3",
     },
     {
-      id: 1,
+      id: 5,
       name: "Antony Rogers",
       email: "antony@gmail.com",
       avatar: "https://randomuser.me/api/portraits/men/32.jpg",
@@ -208,7 +256,7 @@ export default function FundTableLayout() {
       funds: "1/3",
     },
     {
-      id: 2,
+      id: 6,
       name: "Linda Parkers",
       email: "linda@gmail.com",
       avatar: "https://randomuser.me/api/portraits/women/32.jpg",
@@ -219,7 +267,7 @@ export default function FundTableLayout() {
       funds: "2/3",
     },
     {
-      id: 1,
+      id: 7,
       name: "Antony Rogers",
       email: "antony@gmail.com",
       avatar: "https://randomuser.me/api/portraits/men/32.jpg",
@@ -230,7 +278,7 @@ export default function FundTableLayout() {
       funds: "1/3",
     },
     {
-      id: 2,
+      id: 8,
       name: "Linda Parkers",
       email: "linda@gmail.com",
       avatar: "https://randomuser.me/api/portraits/women/32.jpg",

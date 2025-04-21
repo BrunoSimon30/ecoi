@@ -1,26 +1,18 @@
 import Link from "next/link";
-import React from "react";
-import { CiSearch } from "react-icons/ci";
-import { FiEye } from "react-icons/fi";
+import React, { useState } from "react";
 import Image from "next/image";
 import { IoChevronBackSharp } from "react-icons/io5";
-import { TfiLineDashed } from "react-icons/tfi";
 import { BiScan } from "react-icons/bi";
+import BackBtn from "@/components/BackBtn";
 
-export default function code() {
+export default function Code() {
+  const [showQR, setShowQR] = useState(true);
   return (
     <section className="h-screen main-bg py-16 px-6  ">
       <div className="container mx-auto max-w-screen-2xl">
         <div className="m-wrap space-y-24">
           <div className="name-warp flex items-start justify-between ">
-            <div className="back-btn">
-              <Link
-                href={"/"}
-                className="text-2xl bg-[#5b94251f] text-[#5B9425] inline-block rounded p-2"
-              >
-                <IoChevronBackSharp />
-              </Link>
-            </div>
+          <BackBtn/>
             <div className="text-center space-y-2">
               <div>
                 <div className="w-14 h-14 bg-[#F8B13F] rounded-2xl text-center flex items-end justify-center overflow-hidden m-auto">
@@ -45,7 +37,7 @@ export default function code() {
             </div>
             <div>
               <Link
-                href={""}
+                href={'/qr-scan/sucessqr'}
                 className="text-2xl bg-[#5b94251f] text-[#5B9425] inline-block rounded p-2"
               >
                 <BiScan />
@@ -64,7 +56,6 @@ export default function code() {
                       width={112}
                       height={53}
                       className="m-auto"
-                      
                     />
                   </div>
                   <h2 className="text-xl font-semibold text-black">
@@ -72,18 +63,28 @@ export default function code() {
                   </h2>
                 </div>
                 <div>
-                  <div className="w-52 h-52 bg-gray-600   rounded-2xl m-auto"></div>
+                  <div
+                    className={`w-52 h-52 bg-gray-600 m-auto ${
+                      !showQR ? "blur" : ""
+                    }`}
+                  >
+                    <img
+                      src="/img/qr.jpg"
+                      alt="QR Code"
+                      className="w-full h-full object-cover  "
+                    />
+                  </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <h4 className="text-[13px] font-[500] text-gray-400">
                     Expire In 2 Minutes
                   </h4>
-                  <Link
-                    href={""}
-                    className="text-white bg-[#5B9425]  px-8 py-3 rounded-full"
+                  <button
+                    onClick={() => setShowQR(!showQR)}
+                    className="text-white bg-[#5B9425] px-8 py-3 rounded-full"
                   >
-                    Hide
-                  </Link>
+                    {showQR ? "Hide" : "Show"}
+                  </button>
                 </div>
               </div>
             </div>

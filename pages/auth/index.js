@@ -18,8 +18,8 @@ export default function signin() {
   return (
     <>
       <section className="sign-sec">
-        <div className="grid grid-cols-2">
-          <div className="main-bg h-screen flex items-center justify-center">
+        <div className="xl:grid grid-cols-2">
+          <div className="hidden xl:flex main-bg h-screen  items-center justify-center">
             <Image
               src="/img/s-logo.svg"
               alt="Logo"
@@ -30,7 +30,7 @@ export default function signin() {
           </div>
           <div className="h-screen flex flex-col   justify-center space-y-24 px-24">
             <div>
-              <h1 className="text-5xl font-semibold  ">Welcome Back</h1>
+              <h1 className="text-4xl font-semibold  ">Welcome Back</h1>
             </div>
             <form>
               <div className="space-y-16">
@@ -59,7 +59,7 @@ export default function signin() {
                   </div>
                   <div className="text-right">
                     <Link
-                      href={"/forget-password"}
+                      href={'/dashboard'}
                       className="text-[#5B9425] font-semibold text-base"
                     >
                       Forget Password
@@ -68,7 +68,7 @@ export default function signin() {
                 </div>
                 <div className="text-center">
                   <Link
-                    href={"/otp-verification"}
+                    href={"/dashboard"}
                     className="btn-b flex items-center justify-center gap-12"
                   >
                     <span className="inline-block pl-3">Sign In</span>
@@ -81,7 +81,7 @@ export default function signin() {
             </form>
             <p className="text-center text-base">
               Don't have an account?{" "}
-              <Link href={"/sign-up"} className="text-[#5B9425] font-semibold ">
+              <Link href={'/dashboard'} className="text-[#5B9425] font-semibold ">
                 Join us now!
               </Link>
             </p>

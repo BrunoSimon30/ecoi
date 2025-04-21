@@ -1,3 +1,4 @@
+import BackBtn from "@/components/BackBtn";
 import Link from "next/link";
 import React, { useState } from "react";
 import { IoChevronBackSharp, IoChevronForwardSharp, IoEyeOffSharp, IoEyeSharp } from "react-icons/io5";
@@ -19,16 +20,9 @@ export default function index() {
       <section className="h-screen main-bg py-8 px-6">
         <div className="container mx-auto max-w-screen-2xl">
           <div className="space-y-24">
-            <div className="back-btn">
-              <Link
-                href={'/'}
-                className="text-2xl bg-[#5b94251f] text-[#5B9425] inline-block rounded p-2"
-              >
-                <IoChevronBackSharp />
-              </Link>
-            </div>
+            <BackBtn/>
             <div>
-              <h1 className="text-5xl font-semibold md:text-center">Reset Password</h1>
+              <h1 className="text-4xl font-semibold md:text-center">Reset Password</h1>
             </div>
             <form>
               <div className="space-y-16">

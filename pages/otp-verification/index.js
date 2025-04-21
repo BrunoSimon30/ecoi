@@ -1,9 +1,12 @@
+import BackBtn from "@/components/BackBtn";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import { useState, useEffect } from "react";
 import { IoChevronBackSharp, IoChevronForwardSharp } from "react-icons/io5";
 
-export default function index() {
+export default function Otpverification() {
+  const router = useRouter();
   const [otp, setOtp] = useState(["", "", "", ""]);
   const [timeLeft, setTimeLeft] = useState(60);
 
@@ -41,16 +44,11 @@ export default function index() {
       <section className="h-screen main-bg py-8 px-6">
         <div className="container mx-auto max-w-screen-2xl  ">
           <div className="space-y-24">
-            <div className="back-btn">
-              <Link
-                href={'/sign-in'}
-                className="text-2xl bg-[#5b94251f] text-[#5B9425] inline-block rounded p-2"
-              >
-                <IoChevronBackSharp />
-              </Link>
-            </div>
+           <BackBtn/>
             <div>
-              <h1 className="text-5xl font-semibold md:text-center">Enter Your OTP</h1>
+              <h1 className="text-4xl font-semibold md:text-center">
+                Enter Your OTP
+              </h1>
             </div>
             <form>
               <div className="space-y-16">
@@ -71,8 +69,8 @@ export default function index() {
                 </div>
 
                 <div className="text-center">
-                  <Link href={'/available-balance'}
-                 
+                  <Link
+                    href={"/available-balance"}
                     className="btn-b flex items-center justify-center gap-12"
                   >
                     <span className="inline-block pl-3">Verify</span>

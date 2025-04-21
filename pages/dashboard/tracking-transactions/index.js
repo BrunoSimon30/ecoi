@@ -101,10 +101,10 @@ export default function TrackingTransactions() {
   return (
     <Dashboardlayout heading="Tracking management">
       <div className="space-y-6">
-        <div className="md:grid grid-cols-3 gap-6">
+        <div className="xl:grid grid-cols-3 gap-6">
           {/* Left Section */}
           <div className="col-span-2 space-y-6">
-            <div className="md:grid grid-cols-2 gap-6 space-y-4 md:space-y-0">
+            <div className="xl:grid grid-cols-2 gap-6 space-y-4 xl:space-y-0">
               {/* Card: Total Transaction */}
               <Card
                 title="Total Transaction"
