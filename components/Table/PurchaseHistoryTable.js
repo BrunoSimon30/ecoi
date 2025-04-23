@@ -284,8 +284,8 @@ export default function PurchaseHistoryTable() {
                  <div className="space-y-2  ">
                    <h3 className="text-black text-xl font-semibold">Items</h3>
                    <div class="overflow-x-auto overflow-y-scroll h-[250px]">
-                     <table class="min-w-full divide-y divide-gray-200  ">
-                       <thead class="bg-gray-100 whitespace-nowrap">
+                     <table class="min-w-full   ">
+                       <thead class="  whitespace-nowrap">
                          <tr>
                            <th class="px-4 py-4 text-left text-xs font-semibold text-slate-900 uppercase tracking-wider">
                              Name
@@ -299,7 +299,7 @@ export default function PurchaseHistoryTable() {
                          </tr>
                        </thead>
      
-                       <tbody class="bg-white divide-y divide-gray-200 ">
+                       <tbody class="  ">
                          {Array(20)
                            .fill()
                            .map((_, index) => (

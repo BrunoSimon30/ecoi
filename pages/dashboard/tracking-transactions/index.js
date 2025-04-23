@@ -101,9 +101,9 @@ export default function TrackingTransactions() {
   return (
     <Dashboardlayout heading="Tracking management">
       <div className="space-y-6">
-        <div className="xl:grid grid-cols-3 gap-6">
+        <div className="xl:grid grid-cols-5 gap-6">
           {/* Left Section */}
-          <div className="col-span-2 space-y-6">
+          <div className="col-span-4 space-y-6">
             <div className="xl:grid grid-cols-2 gap-6 space-y-4 xl:space-y-0">
               {/* Card: Total Transaction */}
               <Card
@@ -138,7 +138,7 @@ export default function TrackingTransactions() {
               </div>
 
               <button
-                onClick={() => setDistributePopupOpen(true)}
+            
                 className="w-full border border-gray-200 rounded-full px-4 py-2 text-[#0069FF]"
               >
                 Total Transaction
@@ -151,9 +151,9 @@ export default function TrackingTransactions() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div  >
                 <Chart options={lineOptions} series={lineData} type="line" height={150} />
-                <Chart options={lineOptions} series={lineData} type="line" height={150} />
+            
               </div>
             </div>
 
@@ -164,7 +164,7 @@ export default function TrackingTransactions() {
                 options={donutData.options}
                 series={donutData.series}
                 type="donut"
-                width="55%"
+                width="100%"
               />
             </div>
           </div>

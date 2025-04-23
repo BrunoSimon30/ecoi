@@ -18,7 +18,7 @@ export default function FeedBack() {
   };
   return (
     <>
-      <section className="h-screen main-bg py-16   relative">
+      <section className="h-screen  py-16   relative">
         <div className="container mx-auto max-w-screen-2xl px-6">
           <div className="m-wrap space-y-10">
             <div className="name-warp flex items-center justify-between ">
@@ -59,7 +59,8 @@ export default function FeedBack() {
                     type="text"
                     value=""
                     placeholder="Enter your feedback"
-                    className="w-full bg-green-100 text-gray-700 px-4 py-2 rounded-xl text-sm outline-none cursor-not-allowed h-[250px]"
+                    className="w-full bg-white border border-gray-200 text-gray-700 px-4 py-2 rounded-md text-sm outline-none cursor-not-allowed h-[250px]"
+                     
                   />
                 </div>
                

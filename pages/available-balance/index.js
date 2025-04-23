@@ -17,7 +17,7 @@ export default function AvailableBalance() {
 
   return (
     <>
-      <section className="h-screen main-bg py-8">
+      <section className="h-screen   py-8">
         <div className="container mx-auto max-w-screen-2xl px-6">
           <div className="space-y-6">
             {/* Header */}
@@ -35,7 +35,7 @@ export default function AvailableBalance() {
             </div>
 
             {/* Search */}
-            <div className="relative">
+            <div className="relative drop-shadow-md">
               <input
                 type="text"
                 placeholder="Search Here"
@@ -65,7 +65,7 @@ export default function AvailableBalance() {
             </div>
 
             {/* Transactions */}
-            <div className="bg-white rounded-2xl px-8 py-6 space-y-2">
+            <div className="bg-white rounded-2xl  py-6 space-y-2">
               <div className="flex items-center justify-between">
                 <h3 className="text-xl font-semibold text-black">Transaction History</h3>
                 <Link href="#" className="text-sm font-bold text-[#5B9425]">View All</Link>
@@ -99,7 +99,7 @@ export default function AvailableBalance() {
       {/* Popups */}
       <Popup isOpen={isDistributePopupOpen} onClose={() => setDistributePopupOpen(false)} widthClass="w-120">
         <div className="space-y-4 py-5 text-center relative">
-          <span className="absolute -top-11 left-1/2 -translate-x-1/2 flex items-center justify-center w-12 h-12 bg-red-500 border-2 border-white rounded-full text-white text-xl">
+          <span className="absolute -top-11 left-1/2 -translate-x-1/2 flex items-center justify-center w-12 h-12 bg-red-500 border-2 border-white rounded-lg text-white text-xl">
             <FaExclamation />
           </span>
           <h1 className="text-xl font-semibold">Emergency Fund Period Ended</h1>
@@ -132,11 +132,11 @@ export default function AvailableBalance() {
             </div>
             <div>
               <label className="block text-sm text-gray-500 mb-1">If Yes, please describe the changes.</label>
-              <input type="text" maxLength={50} placeholder="0/50" className="w-full border border-gray-300 rounded-full px-4 py-2 text-sm" />
+              <input type="text" maxLength={50} placeholder="0/50" className="w-full border border-gray-300 rounded-lg px-4 py-4 text-sm" />
             </div>
             <div>
               <label className="block text-sm text-gray-500 mb-1">Are you currently employed?</label>
-              <input type="text" maxLength={50} placeholder="0/50" className="w-full border border-gray-300 rounded-full px-4 py-2 text-sm" />
+              <input type="text" maxLength={50} placeholder="0/50" className="w-full border border-gray-300 rounded-lg px-4 py-4 text-sm" />
             </div>
             <div>
               <label className="block font-medium text-gray-700 mb-1">Do you still require financial assistance?</label>
@@ -147,7 +147,7 @@ export default function AvailableBalance() {
             </div>
             <div>
               <label className="block text-sm text-gray-500 mb-1">Reason for continued assistance.</label>
-              <input type="text" maxLength={50} placeholder="0/50" className="w-full border border-gray-300 rounded-full px-4 py-2 text-sm" />
+              <input type="text" maxLength={50} placeholder="0/50" className="w-full border border-gray-300 rounded-lg px-4 py-4 text-sm" />
             </div>
             <div className="text-center">
               <button type="button" onClick={() => { setApplyPopupOpen(false); setSubmitfundOpen(true); }} className="bg-[#5B9425] text-white px-8 py-2 rounded-full">

@@ -16,12 +16,12 @@ import BackBtn from "@/components/BackBtn";
 export default function UserProfile() {
    
   return (
-    <section className="h-screen main-bg py-16   relative">
+    <section className="h-screen   py-16   relative">
       <div className="container mx-auto max-w-screen-2xl px-6">
         <div className="m-wrap space-y-14">
           <div className="name-warp  space-y-4">
             <BackBtn />
-            <div className="text-center space-y-12">
+            <div className="text-center space-y-24">
               <div>
                 <div className="w-14 h-14 bg-[#F8B13F] rounded-2xl text-center flex items-end justify-center overflow-hidden m-auto">
                   <Image
@@ -45,7 +45,7 @@ export default function UserProfile() {
                   <li>
                     <Link
                       href={'/profile/edit-profile'}
-                      className="flex gap-3 items-center bg-white drop-shadow-md rounded-2xl px-8 py-4"
+                      className="flex gap-3 items-center bg-white  rounded-2xl px-8 py-4"
                     >
                       <span className="w-10 h-10 rounded-full flex items-center justify-center bg-[#D1E7D1] text-[#5B9425] text-2xl">
                         <HiOutlineUser />
@@ -57,7 +57,7 @@ export default function UserProfile() {
                   <li>
                     <Link
                       href={'/help'}
-                      className="flex gap-3 items-center bg-white drop-shadow-md rounded-2xl px-8 py-4"
+                      className="flex gap-3 items-center bg-white  rounded-2xl px-8 py-4"
                     >
                       <span className="w-10 h-10 rounded-full flex items-center justify-center bg-[#D1E7D1] text-[#5B9425] text-2xl">
                         <IoSettingsOutline />
@@ -68,7 +68,7 @@ export default function UserProfile() {
                   <li>
                     <Link
                       href={"/terms-conditions"}
-                      className="flex gap-3 items-center bg-white drop-shadow-md rounded-2xl px-8 py-4"
+                      className="flex gap-3 items-center bg-white  rounded-2xl px-8 py-4"
                     >
                       <span className="w-10 h-10 rounded-full flex items-center justify-center bg-[#D1E7D1] text-[#5B9425] text-2xl">
                         <GoChecklist />
@@ -81,7 +81,7 @@ export default function UserProfile() {
               <div className="logout">
                 <Link
                   href={""}
-                  className="flex gap-3 items-center bg-white drop-shadow-md rounded-2xl px-8 py-4"
+                  className="flex gap-3 items-center bg-white  rounded-2xl px-8 py-4"
                 >
                   <span className="w-10 h-10 rounded-full flex items-center justify-center bg-[#FEB5B6] text-[#5B9425] text-2xl">
                     <HiMiniPower />

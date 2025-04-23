@@ -97,7 +97,7 @@ export default function FundDistributionPage() {
               <input
                 type="number"
                 placeholder="$10,000"
-                className="w-full p-2 border border-gray-300 rounded-full text-sm"
+                className="w-full px-2 py-4 border border-gray-300 rounded-lg text-sm"
               />
             </div>
             <div className="text-center">

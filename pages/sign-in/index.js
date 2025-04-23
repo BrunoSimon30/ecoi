@@ -19,7 +19,7 @@ export default function Signin() {
 
   return (
     <>
-      <section className="h-screen main-bg py-8 px-6">
+      <section className="h-screen  py-8 px-6">
         <div className="container mx-auto max-w-screen-2xl">
           <div className="space-y-24">
             <BackBtn />
@@ -53,14 +53,7 @@ export default function Signin() {
                       {passwordVisible ? <IoEyeSharp /> : <IoEyeOffSharp />}
                     </span>
                   </div>
-                  <div className="text-right">
-                    <Link
-                      href={"/forget-password"}
-                      className="text-[#5B9425] font-semibold text-base"
-                    >
-                      Forget Password
-                    </Link>
-                  </div>
+               
                 </div>
                 <div className="text-center">
                   <Link href={'/otp-verification'}  className="bg-[#5B9425] w-fit  flex items-center justify-center gap-12 text-white hover:bg-gray-500 hover:text-white transition-all duration-300 px-6 py-3 rounded-full mx-auto">
@@ -72,12 +65,7 @@ export default function Signin() {
                 </div>
               </div>
             </form>
-            <p className="text-center text-base">
-              Don't have an account?{" "}
-              <Link href={"/sign-up"} className="text-[#5B9425] font-semibold ">
-                Join us now!
-              </Link>
-            </p>
+          
           </div>
         </div>
       </section>

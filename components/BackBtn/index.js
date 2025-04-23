@@ -8,7 +8,7 @@ export default function BackBtn() {
     <div className="back-btn">
       <button
         onClick={() => router.back()}
-        className="text-xl bg-[#5b94251f] text-[#5B9425] inline-block rounded p-2"
+        className="text-xl   text-[#5B9425] inline-block rounded p-2"
       >
         <IoChevronBackSharp />
       </button>

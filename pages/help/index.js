@@ -6,7 +6,7 @@ import React from "react";
 export default function Help() {
   return (
     <>
-      <section className="h-screen main-bg py-16   relative">
+      <section className="h-screen  py-16   relative">
         <div className="container mx-auto max-w-screen-2xl px-6">
           <div className="m-wrap space-y-10">
             <div className="name-warp flex items-center justify-between ">
@@ -27,7 +27,7 @@ export default function Help() {
                     type="text"
                     value=""
                     placeholder="Enter your subject"
-                    className="w-full bg-green-100 text-gray-700 px-4 py-2 rounded-full text-sm outline-none cursor-not-allowed"
+                    className="w-full bg-white border border-gray-400 text-gray-700 px-4 py-4 rounded-lg text-sm outline-none cursor-not-allowed"
                   />
                 </div>
                 <div>
@@ -40,7 +40,7 @@ export default function Help() {
                     type="text"
                     value=""
                     placeholder="Enter your message"
-                    className="w-full bg-green-100 text-gray-700 px-4 py-2 rounded-xl text-sm outline-none cursor-not-allowed h-[250px]"
+                    className="w-full border border-gray-400  text-gray-700 px-4 py-2 rounded-xl text-sm outline-none cursor-not-allowed h-[250px]"
                   />
                 </div>
                 <div className="flex flex-col space-y-2 items-center">

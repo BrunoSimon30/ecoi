@@ -17,7 +17,7 @@ export default function Grocery() {
   const openHistoryUser = () => setHistoryUser(true);
   return (
     <>
-      <section className="h-screen main-bg py-8 px-6">
+      <section className="h-screen   py-8 px-6">
         <div className="container mx-auto max-w-screen-2xl">
           <div className="m-wrap space-y-3">
             <div className="name-warp flex items-baseline  ">
@@ -32,7 +32,7 @@ export default function Grocery() {
                 />
               </div>
             </div>
-            <div className="search-wrap relative">
+            <div className="search-wrap relative drop-shadow-md">
               <input
                 type="text"
                 placeholder="Search Here"

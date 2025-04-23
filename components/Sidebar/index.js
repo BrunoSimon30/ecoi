@@ -13,12 +13,12 @@ export default function SideBar({ closeSidebar }) {
   const router = useRouter();
 
   const isActive = (path) =>
-    router.pathname === path ? "bg-[#5B9425] text-white" : "bg-white text-black";
+    router.pathname === path ? "bg-[#5B9425] text-white" : "  text-black";
 
   const isManager = router.pathname.startsWith("/manager");
 
   return (
-    <aside className="flex flex-col w-72 max-w-full bg-white lg:bg-transparent h-screen px-5 py-8 overflow-y-auto space-y-12">
+    <aside className="flex flex-col w-72 max-w-full bg-white lg:bg-transparent h-screen   py-8   space-y-12">
       {/* Close Button (mobile/tablet only) */}
       <button
         className="absolute top-4 right-4 text-3xl text-gray-600 lg:hidden"
@@ -37,26 +37,28 @@ export default function SideBar({ closeSidebar }) {
         <nav className="flex-1 -mx-3 space-y-6 pl-2">
           {/* Show in MANAGER only */}
           {isManager && (
-            <Link
-              className={`flex items-center px-3 py-3 transition-colors duration-300 transform rounded-lg ${isActive(
-                "/manager"
-              )} hover:bg-[#5dad12] hover:text-white border border-[#5B9425] w-fit lg:m-auto lg:mb-5`}
-              href="/manager"
-            >
-              <span className="text-2xl">
-                <RiQrScanLine />
-              </span>
-              <span className="mx-4 text-md font-medium">Scan QR</span>
-            </Link>
+         <Link
+         className={`group flex bg-white items-center rounded-2xl px-3 py-3 transition-colors duration-300 transform  ${isActive(
+           "/manager/scan-qr"
+         )} hover:bg-[#5B9425] hover:text-white border border-[#5B9425] w-fit lg:m-auto lg:mb-5`}
+         href="/manager/scan-qr"
+       >
+         <span className="text-2xl text-[#5B9425] group-hover:text-white">
+           <RiQrScanLine />
+         </span>
+         <span className="mx-4 text-md font-medium text-[#5B9425] group-hover:text-white">
+           Scan QR
+         </span>
+       </Link>
           )}
 
           {/* Show in DASHBOARD only */}
           {!isManager && (
             <>
               <Link
-                className={`flex items-center px-3 py-3 rounded-lg transition duration-300 ${isActive(
+                className={`flex items-center  pl-5 py-3  transition duration-300 ${isActive(
                   "/dashboard"
-                )} hover:bg-[#5dad12] hover:text-white`}
+                )} hover:bg-[#5B9425] hover:text-white`}
                 href="/dashboard"
               >
                 <span className="text-2xl">
@@ -66,9 +68,9 @@ export default function SideBar({ closeSidebar }) {
               </Link>
 
               <Link
-                className={`flex items-center px-3 py-3 rounded-lg transition duration-300 ${isActive(
+                className={`w-fit lg:w-full flex items-center pl-5 py-3  transition duration-300 ${isActive(
                   "/dashboard/manageusers"
-                )} hover:bg-[#5dad12] hover:text-white`}
+                )} hover:bg-[#5B9425] hover:text-white`}
                 href="/dashboard/manageusers"
               >
                 <span className="text-2xl">
@@ -78,9 +80,9 @@ export default function SideBar({ closeSidebar }) {
               </Link>
 
               <Link
-                className={`flex items-center px-3 py-3 rounded-lg transition duration-300 ${isActive(
+                className={` w-fit lg:w-full flex items-center pl-5 py-3  transition duration-300 ${isActive(
                   "/dashboard/tracking-transactions"
-                )} hover:bg-[#5dad12] hover:text-white`}
+                )} hover:bg-[#5B9425] hover:text-white`}
                 href="/dashboard/tracking-transactions"
               >
                 <span className="text-2xl">
@@ -90,9 +92,9 @@ export default function SideBar({ closeSidebar }) {
               </Link>
 
               <Link
-                className={`flex items-center px-3 py-3 rounded-lg transition duration-300 ${isActive(
+                className={`w-fit lg:w-full flex items-center pl-5 py-3  transition duration-300 ${isActive(
                   "/dashboard/inventory-management"
-                )} hover:bg-[#5dad12] hover:text-white`}
+                )} hover:bg-[#5B9425] hover:text-white`}
                 href="/dashboard/inventory-management"
               >
                 <span className="text-2xl">
@@ -107,9 +109,9 @@ export default function SideBar({ closeSidebar }) {
           {isManager && (
             <>
               <Link
-                className={`flex items-center px-3 py-3 rounded-lg transition duration-300 ${isActive(
+                className={`w-fit lg:w-full flex items-center pl-5 py-3  transition duration-300 ${isActive(
                   "/manager/inventory-management"
-                )} hover:bg-[#5dad12] hover:text-white`}
+                )} hover:bg-[#5B9425] hover:text-white`}
                 href="/manager/inventory-management"
               >
                 <span className="text-2xl">
@@ -119,9 +121,9 @@ export default function SideBar({ closeSidebar }) {
               </Link>
 
               <Link
-                className={`flex items-center px-3 py-3 rounded-lg transition duration-300 ${isActive(
+                className={`w-fit lg:w-full flex items-center pl-5 py-3  transition duration-300 ${isActive(
                   "/manager/purchase-history"
-                )} hover:bg-[#5dad12] hover:text-white`}
+                )} hover:bg-[#5B9425] hover:text-white`}
                 href="/manager/purchase-history"
               >
                 <span className="text-2xl">
@@ -133,16 +135,7 @@ export default function SideBar({ closeSidebar }) {
           )}
         </nav>
 
-        {/* Logout */}
-        <div className="mt-6">
-          <Link
-            href=""
-            className="text-[#5B9425] transition-colors duration-200 hover:text-gray-500 flex items-center gap-2"
-          >
-            <span>Logout</span>
-            <AiOutlineLogout />
-          </Link>
-        </div>
+        
       </div>
     </aside>
   );

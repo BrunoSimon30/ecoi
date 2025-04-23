@@ -8,6 +8,7 @@ import { GoChevronDown } from "react-icons/go";
 import { MdOutlineFileUpload,MdDeleteOutline } from "react-icons/md";
 import { BiEditAlt } from "react-icons/bi";
 import Popup from "../Popup";
+import { FaPlus } from "react-icons/fa6";
 
 
 export default function InventoryTable() {
@@ -145,7 +146,7 @@ export default function InventoryTable() {
           <img
             src={row.avatar}
             alt={row.name}
-            className="w-10 h-10 rounded-full"
+            className="w-10 h-10 rounded-lg"
           />
           <div>
             <div className="font-semibold text-gray-800">{row.name}</div>
@@ -174,7 +175,7 @@ export default function InventoryTable() {
       selector: (row) => row.approval,
       cell: (row) => (
         <div
-          className={`text-sm px-3 py-1 rounded-full font-medium ${row.usageColor}`}
+          className={`text-sm px-3 py-1 rounded-lg font-medium ${row.usageColor}`}
         >
           {row.approval}
         </div>
@@ -263,7 +264,7 @@ export default function InventoryTable() {
       <div className="fund-table border border-gray-200 py-6 px-6 rounded-2xl">
         <div className="md:flex justify-between items-center mb-4 space-y-4 md:space-y-0">
           <h2 className="text-xl font-semibold text-gray-800 flex items-center gap-2">
-            <span className="w-12 h-12 rounded-full bg-[#D1E7D1] text-2xl flex items-center justify-center">
+            <span className="w-12 h-12 rounded-lg bg-[#D1E7D1] text-2xl flex items-center justify-center">
               <HiOutlineUser />
             </span>
             Product List
@@ -272,15 +273,16 @@ export default function InventoryTable() {
             <div className="flex gap-2">
               <button
                 onClick={openUploadSheet}
-                className="    border border-gray-200 text-gray-500 font-medium px-5 py-2 rounded-full text-sm"
+                className="    border border-gray-200 text-gray-500 font-medium px-5 py-2 rounded-lg text-sm"
               >
                 + Upload Spreadsheet
               </button>
               <button
                 onClick={openDistributePopup}
-                className="bg-[#5B9425] hover:bg-green-700 text-white font-medium px-5 py-2 rounded-full text-sm"
+                className="bg-[#5B9425] hover:bg-green-700 text-white font-medium px-5 py-2 rounded-lg text-sm flex gap-2 items-center"
               >
-                + Add User
+                 <span className="w-6 h-6 bg-white rounded-full text-black flex  items-center justify-center"><FaPlus /></span>
+                             <span> Add </span>
               </button>
             </div>
             <div className="flex items-center gap-2">
@@ -340,19 +342,19 @@ export default function InventoryTable() {
       <Popup
         isOpen={isDistributePopupOpen}
         onClose={() => setDistributePopupOpen(false)}
-        widthClass="w-200"
+        widthClass="w-150"
       >
         <div className=" py-8">
           <form className="space-y-4">
             <label
               htmlFor="file-upload"
-              className="flex flex-col items-center justify-center border-2 border-dashed border-[#5B9425] rounded-md p-6 cursor-pointer text-center mb-4"
+              className="flex flex-col items-center justify-center border    border-gray-300 rounded-md p-6 cursor-pointer text-center mb-4"
             >
               <span className="text-[#5B9425] text-3xl">
                 <MdOutlineFileUpload />
               </span>
-              <p className="text-sm font-medium text-gray-800">
-                <span className="text-[#5B9425] font-semibold">
+              <p className="text-sm   text-gray-800">
+                <span className="text-black font-semibold">
                   Click to upload
                 </span>{" "}
                 or drag and drop
@@ -375,7 +377,7 @@ export default function InventoryTable() {
                 type="text"
                 placeholder="Enter Your Product Name"
                 maxlength="50"
-                class="w-full px-4 py-2 border border-gray-300 rounded-full mb-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="w-full px-4 py-4 border border-gray-300 rounded-lg mb-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <div className="space-y-4">
@@ -385,7 +387,7 @@ export default function InventoryTable() {
                     Product Category
                   </label>
                   <div className="relative">
-                    <select class="w-full px-4 py-2 border appearance-none border-gray-300 rounded-full mb-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <select class="w-full px-4 py-4 border appearance-none border-gray-300 rounded-lg mb-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500">
                       <option>Choose</option>
                       <option>Electronics</option>
                       <option>Apparel</option>
@@ -402,7 +404,7 @@ export default function InventoryTable() {
                     type="text"
                     placeholder="Enter Your Product Name"
                     maxlength="50"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-full mb-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="w-full px-4 py-4 border border-gray-300 rounded-lg mb-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
               </div>
@@ -414,7 +416,7 @@ export default function InventoryTable() {
                     type="text"
                     placeholder="Enter Your Price"
                     maxlength="50"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-full mb-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="w-full px-4 py-4 border border-gray-300 rounded-lg mb-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
                 <div className="form-group">
@@ -425,7 +427,7 @@ export default function InventoryTable() {
                     type="text"
                     placeholder="Enter Your Quantity"
                     maxlength="50"
-                    class="w-full px-4 py-2 border border-gray-300 rounded-full mb-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="w-full px-4 py-4 border border-gray-300 rounded-lg mb-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
               </div>
@@ -433,7 +435,7 @@ export default function InventoryTable() {
               <div className="form-group">
                 <label class="block text-gray-500 text-sm  mb-2">Status</label>
                 <div className="relative">
-                  <select class="w-full px-4 py-2 border appearance-none border-gray-300 rounded-full mb-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500">
+                  <select class="w-full px-4 py-4 border appearance-none border-gray-300 rounded-lg mb-2 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <option>Choose</option>
                     <option>Active</option>
                     <option>In-Active</option>
@@ -448,7 +450,7 @@ export default function InventoryTable() {
 
             <div className="text-center">
               <button
-                className="  border border-gray-200 px-8 py-2   gap-4 rounded-full bg-[#5B9425] text-white text-center"
+                className="  border border-gray-200 px-8 py-2   gap-4 rounded-lg bg-[#5B9425] text-white text-center"
                 type="submit"
               >
                 Submit
@@ -463,7 +465,7 @@ export default function InventoryTable() {
         widthClass="w-120"
       >
         <div className=" py-8">
-          <div className="flex flex-col items-center justify-center border-2 border-dashed border-gray-300 p-6 rounded-lg w-full max-w-md mx-auto">
+          <div className="flex flex-col items-center justify-center border-2 border  border-gray-300 p-6 rounded-lg w-full max-w-md mx-auto">
             <span className="text-[#5B9425] text-3xl">
               <MdOutlineFileUpload />
             </span>
@@ -478,7 +480,7 @@ export default function InventoryTable() {
 
             <button
               onClick={handleButtonClick}
-              className="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition duration-300"
+              className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition duration-300"
             >
               Upload File
             </button>
@@ -502,13 +504,13 @@ export default function InventoryTable() {
           <div className="flex gap-2">
             <button
              
-              className="w-full  border border-gray-200 px-4 py-2   gap-4 rounded-full bg-red-600 text-white text-center"
+              className="w-full  border border-gray-200 px-4 py-2   gap-4 rounded-lg bg-red-600 text-white text-center"
             >
              Yes
             </button>
             <button
               
-              className="w-full     px-4 py-2   gap-4 rounded-full border border-[#5B9425] text-black text-center"
+              className="w-full     px-4 py-2   gap-4 rounded-lg border border-[#5B9425] text-black text-center"
             >
              No
             </button>

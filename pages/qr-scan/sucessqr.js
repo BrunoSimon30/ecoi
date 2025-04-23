@@ -7,7 +7,7 @@ import BackBtn from "@/components/BackBtn";
 
 export default function Sucessqr() {
   return (
-    <section className="h-screen main-bg py-16 px-6  ">
+    <section className="h-screen   py-16 px-6  ">
       <div className="container mx-auto max-w-screen-2xl">
         <div className="m-wrap space-y-10">
           <div className="name-warp flex items-start justify-between ">
@@ -18,7 +18,7 @@ export default function Sucessqr() {
           </div>
 
           <div className="blance-wrap">
-            <div className="text-center    bg-white drop-shadow-md rounded-2xl px-8 py-16">
+            <div className="text-center    bg-white   rounded-2xl px-8 py-16">
               <div className="space-y-10">
                 <div>
                   <span className="  m-auto flex items-center justify-center w-24 h-24 bg-[#5B9425] border-2 border-white rounded-full text-white text-5xl">

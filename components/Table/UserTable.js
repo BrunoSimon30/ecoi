@@ -1,9 +1,11 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { IoChevronBackSharp, IoChevronForwardSharp } from "react-icons/io5";
-import { HiOutlineDotsVertical } from "react-icons/hi"; // Import the icon
+import { FaCheckCircle, FaSpinner } from "react-icons/fa";
 import DataTable from "react-data-table-component";
 import { HiOutlineUser } from "react-icons/hi2";
+import { IoHourglassOutline } from "react-icons/io5";
+import { FaPlus } from "react-icons/fa6";
 import Popup from "../Popup";
 import Image from "next/image";
 
@@ -11,6 +13,7 @@ export default function UserTableLayout() {
   
   const [currentPage, setCurrentPage] = useState(1);
   const [dropdownVisible, setDropdownVisible] = useState({});
+  const [approvalStatusMap, setApprovalStatusMap] = useState({});
   const [isDistributePopupOpen, setDistributePopupOpen] = useState(false);
   const openDistributePopup = () => setDistributePopupOpen(true);
   const itemsPerPage = 8;
@@ -121,37 +124,55 @@ export default function UserTableLayout() {
     },
     {
       name: "Approval",
-      selector: (row) => row.usage,
-      cell: (row) => (
-        <div
-          className={`text-sm px-3 py-1 rounded-full font-medium ${row.usageColor}`}
-        >
-          {row.approval}
-        </div>
-      ),
-    },
-
+      selector: (row) => row.approval,
+      cell: (row) => {
+        const selectedValue = approvalStatusMap[row.id] || row.approval;
+    
+        const getColorClass = (value) => {
+          switch (value) {
+            case "Onboarded":
+              return "bg-green-100 text-green-700 border-green-300";
+            case "Rejected":
+              return "bg-red-100 text-red-700 border-red-300";
+            case "In Review":
+            default:
+              return "bg-yellow-100 text-yellow-700 border-yellow-300";
+          }
+        };
+    
+        return (
+          <select
+            value={selectedValue}
+            onChange={(e) =>
+              setApprovalStatusMap((prev) => ({
+                ...prev,
+                [row.id]: e.target.value,
+              }))
+            }
+            className={`text-sm px-3 py-1 rounded-full font-medium ${getColorClass(
+              selectedValue
+            )}`}
+          >
+            <option value="In Review">In Review</option>
+            <option value="Onboarded">Onboarded</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+        );
+      },
+    }, 
     {
       name: "Edit",
-      selector: (row) => row.id, // Just a placeholder column for the icon
+      selector: (row) => row.id,
       cell: (row) => (
-        <div className="relative">
-          <HiOutlineDotsVertical
-            onClick={() => handleDropdownToggle(row.id)} // Toggle dropdown visibility for specific row
-            className="text-gray-500 cursor-pointer"
-          />
-          {dropdownVisible[row.id] && (
-            <div className="absolute left-9 -bottom-9 mt-2 bg-white shadow-md rounded-lg border border-gray-300 z-20">
-              <ul className="text-sm w-24">
-                <li className="px-4 py-2 hover:bg-gray-100">Option 1</li>
-                <li className="px-4 py-2 hover:bg-gray-100">Option 2</li>
-                <li className="px-4 py-2 hover:bg-gray-100">Option 3</li>
-              </ul>
-            </div>
+        <div className="flex items-center justify-center space-x-2 text-lg text-gray-500">
+          {row.approval === "Onboarded" ? (
+            <FaCheckCircle className="text-green-500" />
+          ) : (
+            <IoHourglassOutline className="" />
           )}
         </div>
       ),
-    },
+    }
   ];
 
   const handleDropdownToggle = (id) => {
@@ -170,8 +191,7 @@ export default function UserTableLayout() {
       location: "New York",
       userid: "12747",
       type: "Monthly",
-      approval: "In Review",
-      usageColor: "bg-yellow-100 text-yellow-700", // Yellow for "In Review"
+      approval: "Rejected",
       funds: "1/3",
       apply: true,
     },
@@ -184,7 +204,6 @@ export default function UserTableLayout() {
       userid: "25747",
       type: "Yearly",
       approval: "Onboarded",
-      usageColor: "bg-green-100 text-green-700", // Green for "Onboarded"
       funds: "2/3",
       apply: false,
     },
@@ -197,7 +216,6 @@ export default function UserTableLayout() {
       userid: "6",
       type: "Yearly",
       approval: "Rejected",
-      usageColor: "bg-red-100 text-red-700", // Red for "Rejected"
       funds: "2/3",
       apply: false,
     },
@@ -210,7 +228,6 @@ export default function UserTableLayout() {
       userid: "12747",
       type: "Monthly",
       approval: "In Review",
-      usageColor: "bg-yellow-100 text-yellow-700", // Yellow for "In Review"
       funds: "1/3",
       apply: false,
     },
@@ -223,7 +240,6 @@ export default function UserTableLayout() {
       userid: "25747",
       type: "Yearly",
       approval: "Onboarded",
-      usageColor: "bg-green-100 text-green-700", // Green for "Onboarded"
       funds: "2/3",
       apply: true,
     },
@@ -236,7 +252,6 @@ export default function UserTableLayout() {
       userid: "6",
       type: "Yearly",
       approval: "Rejected",
-      usageColor: "bg-red-100 text-red-700", // Red for "Rejected"
       funds: "2/3",
       apply: true,
     },
@@ -249,7 +264,6 @@ export default function UserTableLayout() {
       userid: "12747",
       type: "Monthly",
       approval: "In Review",
-      usageColor: "bg-yellow-100 text-yellow-700", // Yellow for "In Review"
       funds: "1/3",
       apply: false,
     },
@@ -262,7 +276,6 @@ export default function UserTableLayout() {
       userid: "25747",
       type: "Yearly",
       approval: "Onboarded",
-      usageColor: "bg-green-100 text-green-700", // Green for "Onboarded"
       funds: "2/3",
       apply: false,
     },
@@ -275,118 +288,13 @@ export default function UserTableLayout() {
       userid: "6",
       type: "Yearly",
       approval: "Rejected",
-      usageColor: "bg-red-100 text-red-700", // Red for "Rejected"
       funds: "2/3",
       apply: false,
     },
   ];
+  
 
-  const inactiveUsers = [
-    {
-      id: 2,
-      name: "Linda Parkers",
-      email: "linda@gmail.com",
-      avatar: "https://randomuser.me/api/portraits/women/32.jpg",
-      location: "New York",
-      userid: "25747",
-      type: "Yearly",
-      approval: "Onboarded",
-      usageColor: "bg-green-100 text-green-700", // Green for "Onboarded"
-      funds: "2/3",
-      apply: true,
-    },
-    {
-      id: 3,
-      name: "anda Parkers",
-      email: "licnda@gmail.com",
-      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-      location: "New York",
-      userid: "6",
-      type: "Yearly",
-      approval: "Rejected",
-      usageColor: "bg-red-100 text-red-700", // Red for "Rejected"
-      funds: "2/3",
-      apply: true,
-    },
-    {
-      id: 4,
-      name: "Antony Rogers",
-      email: "antony@gmail.com",
-      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-      location: "New York",
-      userid: "12747",
-      type: "Monthly",
-      approval: "In Review",
-      usageColor: "bg-yellow-100 text-yellow-700", // Yellow for "In Review"
-      funds: "1/3",
-      apply: true,
-    },
-    {
-      id: 5,
-      name: "Linda Parkers",
-      email: "linda@gmail.com",
-      avatar: "https://randomuser.me/api/portraits/women/32.jpg",
-      location: "New York",
-      userid: "25747",
-      type: "Yearly",
-      approval: "Onboarded",
-      usageColor: "bg-green-100 text-green-700", // Green for "Onboarded"
-      funds: "2/3",
-      apply: true,
-    },
-    {
-      id: 6,
-      name: "anda Parkers",
-      email: "licnda@gmail.com",
-      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-      location: "New York",
-      userid: "6",
-      type: "Yearly",
-      approval: "Rejected",
-      usageColor: "bg-red-100 text-red-700", // Red for "Rejected"
-      funds: "2/3",
-      apply: true,
-    },
-    {
-      id: 7,
-      name: "Antony Rogers",
-      email: "antony@gmail.com",
-      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-      location: "New York",
-      userid: "12747",
-      type: "Monthly",
-      approval: "In Review",
-      usageColor: "bg-yellow-100 text-yellow-700", // Yellow for "In Review"
-      funds: "1/3",
-      apply: true,
-    },
-    {
-      id: 8,
-      name: "Linda Parkers",
-      email: "linda@gmail.com",
-      avatar: "https://randomuser.me/api/portraits/women/32.jpg",
-      location: "New York",
-      userid: "25747",
-      type: "Yearly",
-      approval: "Onboarded",
-      usageColor: "bg-green-100 text-green-700", // Green for "Onboarded"
-      funds: "2/3",
-      apply: true,
-    },
-    {
-      id: 9,
-      name: "anda Parkers",
-      email: "licnda@gmail.com",
-      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-      location: "New York",
-      userid: "6",
-      type: "Yearly",
-      approval: "Rejected",
-      usageColor: "bg-red-100 text-red-700", // Red for "Rejected"
-      funds: "2/3",
-      apply: true,
-    },
-  ];
+ 
 
   const data = activeUsers; // or use inactiveUsers or any other default data
 
@@ -420,9 +328,10 @@ export default function UserTableLayout() {
           <div className="flex gap-4">
             <button
               onClick={openDistributePopup}
-              className="bg-[#5B9425] hover:bg-green-700 text-white font-medium px-5 py-2 rounded-full text-sm"
+              className="bg-[#5B9425] hover:bg-green-700 text-white font-medium px-5 py-2 rounded-lg text-sm flex items-center gap-2"
             >
-              + Add User
+              <span className="w-6 h-6 bg-white rounded-full text-black flex  items-center justify-center"><FaPlus /></span>
+             <span> Add User</span>
             </button>
             <div className="flex items-center gap-2">
               <Link

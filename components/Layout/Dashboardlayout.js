@@ -28,7 +28,7 @@ export default function Dashboardlayout({ children, heading }) {
       </div>
 
       {/* Main Content */}
-      <main className="w-full p-4">
+      <main className="w-full  pt-4 pr-4 pb-4 lg:relative lg:z-50">
         <div className="h-full bg-white rounded-2xl">
           {/* Header */}
           <header className="px-5 border-b border-gray-200 py-6">
@@ -66,14 +66,7 @@ export default function Dashboardlayout({ children, heading }) {
                 </div>
 
                 {/* Filters & Profile */}
-                <div className="flex items-center gap-4">
-                  <button
-                    className="text-[#5B9425] bg-[#D1E7D1] text-3xl p-2 rounded hidden lg:block"
-                    aria-label="Filters"
-                  >
-                    <HiOutlineAdjustmentsHorizontal />
-                  </button>
-                  <div className="w-14 h-14 bg-[#F8B13F] rounded-2xl overflow-hidden flex items-end justify-center">
+                <div className="w-14 h-14 bg-[#F8B13F] rounded-2xl overflow-hidden flex items-end justify-center">
                     <Image
                       className="object-cover"
                       src="/img/profile.png"
@@ -82,7 +75,6 @@ export default function Dashboardlayout({ children, heading }) {
                       alt="profile"
                     />
                   </div>
-                </div>
               </div>
             </div>
           </header>

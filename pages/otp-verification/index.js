@@ -41,7 +41,7 @@ export default function Otpverification() {
 
   return (
     <>
-      <section className="h-screen main-bg py-8 px-6">
+      <section className="h-screen  py-8 px-6">
         <div className="container mx-auto max-w-screen-2xl  ">
           <div className="space-y-24">
            <BackBtn/>
@@ -60,7 +60,7 @@ export default function Otpverification() {
                       type="text"
                       maxLength="1"
                       placeholder="-"
-                      className="w-20 h-20 rounded-lg text-center text-xl bg-gray-200 focus:outline-none"
+                      className="w-20 h-20 rounded-lg text-center text-xl bg-[#E6F1FE] focus:outline-none"
                       value={digit}
                       onChange={(e) => handleChange(index, e.target.value)}
                       onKeyDown={(e) => handleKeyDown(index, e)}

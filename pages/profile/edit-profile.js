@@ -1,10 +1,25 @@
 import BackBtn from "@/components/BackBtn";
 import BottomNav from "@/components/BottomNav";
 import Image from "next/image";
-import React from "react";
+import React, { useRef, useState } from "react";
 import { FaPen } from "react-icons/fa";
 
 export default function EditProfile() {
+  const fileInputRef = useRef(null);
+  const [selectedImage, setSelectedImage] = useState("/img/profile.png");
+
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setSelectedImage(imageUrl);
+    }
+  };
+
+  const handleEditClick = () => {
+    fileInputRef.current.click();
+  };
+
   const data = {
     name: "Herry",
     email: "herry9@gmail.com",
@@ -34,7 +49,7 @@ export default function EditProfile() {
   ];
   return (
     <>
-      <section className="h-screen main-bg py-16   relative">
+      <section className="h-screen  py-16   relative">
         <div className="container mx-auto max-w-screen-2xl px-6">
           <div className="m-wrap space-y-10">
             <div className="name-warp flex items-center justify-between ">
@@ -43,17 +58,32 @@ export default function EditProfile() {
                 save
               </button>
             </div>
-            <div className="bg-white rounded-2xl py-4 over-wrap space-y-1 h-[630px] overflow-y-scroll scrollbar-hide pr-4">
+            <div className="bg-white rounded-2xl py-4 over-wrap space-y-1 h-[700px] overflow-y-scroll scrollbar-hide pr-4">
               <div className="text-center ">
-                <div className="w-14 h-14 bg-[#F8B13F] rounded-2xl text-center flex items-end justify-center   m-auto relative">
-                  <button className="text-white bg-[#5B9425] text-[8px] w-6 h-6 rounded-full absolute flex items-center justify-center -right-2 -top-2">
+                <div className="w-14 h-14 bg-[#F8B13F] rounded-2xl text-center flex items-end justify-center m-auto relative">
+                  {/* Edit Button */}
+                  <button
+                    onClick={handleEditClick}
+                    className="text-white bg-[#5B9425] text-[8px] w-6 h-6 rounded-full absolute flex items-center justify-center -right-2 -top-2"
+                  >
                     <FaPen />
                   </button>
+
+                  {/* Hidden File Input */}
+                  <input
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    ref={fileInputRef}
+                    onChange={handleImageChange}
+                  />
+
+                  {/* Profile Image */}
                   <Image
-                    className="object-cover "
-                    src={"/img/profile.png"}
-                    width={50}
-                    height={50}
+                    className="object-cover rounded-2xl"
+                    src={selectedImage}
+                    width={60}
+                    height={60}
                     alt="profile"
                   />
                 </div>
@@ -76,7 +106,7 @@ export default function EditProfile() {
                       name={field.name}
                       type="text"
                       value={field.value}
-                      className="w-full bg-green-100 text-gray-700 px-4 py-2 rounded-full text-sm outline-none cursor-not-allowed"
+                      className="w-full bg-white border border-gray-400 text-gray-700 px-4 py-4 rounded-lg text-sm outline-none cursor-not-allowed"
                     />
                   </div>
                 ))}
